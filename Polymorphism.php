@@ -9,10 +9,10 @@ var_dump($company);
 $company->programmer = new BackendProgrammer("Agung");
 var_dump($company);
 
-$company->programmer = new FornendProgrammer("Lasbi");
+$company->programmer = new ForntendProgrammer("Lasbi");
 var_dump($company);
 
 
 sayHelloProgrammer(new Programmer("Agung"));
 sayHelloProgrammer(new BackendProgrammer("Lasbi"));
-sayHelloProgrammer(new FornendProgrammer("Harist"));
+sayHelloProgrammer(new ForntendProgrammer("Harist"));
