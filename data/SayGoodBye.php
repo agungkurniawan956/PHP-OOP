@@ -39,10 +39,25 @@ trait CanRun
   public abstract function run(): void;
 }
 
-
-class Person
+class ParentPerson
 {
-  use sayWellcome, sayGoodBye, callName, CanRun;
+  public function goodbye(?string $name): void // parent override by => Trait override=> child class
+  {
+    echo "This good bye from parent person" . PHP_EOL;
+  }
+
+  public function welcome(?string $name): void
+  {
+    echo "This Welcome from parent Person" . PHP_EOL;
+  }
+}
+
+class Person extends ParentPerson
+{
+  use sayWellcome, sayGoodBye, callName, CanRun {
+    // welcome as private; // <= This code is visbility override
+    // goodbye as private;
+  }
 
   public function run(): void
   {
