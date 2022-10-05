@@ -52,12 +52,16 @@ class ParentPerson
   }
 }
 
+trait all
+{
+  use sayWellcome, sayGoodBye, callName, CanRun;
+  // welcome as private; // <= This code is visbility override
+  // goodbye as private;
+}
+
 class Person extends ParentPerson
 {
-  use sayWellcome, sayGoodBye, callName, CanRun {
-    // welcome as private; // <= This code is visbility override
-    // goodbye as private;
-  }
+  use all;
 
   public function run(): void
   {
