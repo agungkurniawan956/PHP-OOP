@@ -7,7 +7,7 @@ class Socmed
 
 class Meta extends Socmed
 {
-  final public function login(string $username, string $password): bool
+  public function login(string $username, string $password): bool
   {
     return true;
   }
