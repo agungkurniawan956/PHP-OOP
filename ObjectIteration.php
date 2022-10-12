@@ -6,14 +6,19 @@ class Data implements IteratorAggregate{
   protected int $tlp = 8954398728;
   private string  $mom = "Rochmawati";
 
+  // public function getIterator(){
+  //   $array = [
+  //     "name" => $this->name,
+  //     "password" => $this->password,
+  //     "tlp" => $this->tlp,
+  //     "mom" => $this->mom,
+  //   ];
+  //   return new ArrayIterator($array);
+  // }
+
   public function getIterator(){
-    $array = [
-      "name" => $this->name,
-      "password" => $this->password,
-      "tlp" => $this->tlp,
-      "mom" => $this->mom,
-    ];
-    return new ArrayIterator($array);
+    yield "name" => $this->name;
+    yield "tlp" => $this->tlp;
   }
 }
 
